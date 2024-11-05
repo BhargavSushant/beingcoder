@@ -1,0 +1,38 @@
+/* styles/components.css */
+
+/* Buttons */
+.btn {
+    @apply px-4 py-2 font-semibold text-white bg-accent rounded hover:bg-blue-700;
+}
+
+/* Header and Footer */
+.header {
+    @apply bg-primary text-white;
+}
+
+.footer {
+    @apply bg-secondary text-white;
+}
+
+/* Navigation Links */
+.nav-link {
+    @apply hover:underline;
+}
+
+.nav-link-active {
+    @apply font-bold underline;
+}
+
+/* Typography */
+.title {
+    @apply text-2xl font-bold;
+}
+
+.subtitle {
+    @apply text-xl font-semibold;
+}
+
+/* Containers */
+.container {
+    @apply mx-auto px-4;
+}
