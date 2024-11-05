@@ -1,12 +1,12 @@
 import { useRouter } from "next/router";
-import { getAllPostIds, getPostData } from "../../lib/posts";
+import { getAllPostIds, getPostData, getAllCategories } from "../../lib/posts";
 import Head from "next/head";
-import Date from "../../components/D";
+import Date from "../../components/Date";
 import Mermaid from "../../components/Mermaid";
 import Layout from "../../components/Layout";
-export default function Post({ postData }) {
+export default function Post({ postData, categories }) {
   return (
-    <Layout>
+    <Layout categories={categories}>
       <Head>
         <title>{postData.title}</title>
       </Head>
@@ -39,9 +39,12 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
+  const categories = getAllCategories();
+
   return {
     props: {
       postData,
+      categories,
     },
   };
 }

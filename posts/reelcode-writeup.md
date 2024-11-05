@@ -1,6 +1,8 @@
 ---
 title: " Writeup for ReelCode"
 date: "2023-10-20"
+category: "System Design"
+subcategory: "Product-Idea"
 ---
 
 # Writeup for ReelCode

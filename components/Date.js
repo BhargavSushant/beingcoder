@@ -1,4 +1,3 @@
-// components/date.js
 /**
  * Imports:
 parseISO and format are functions from the date-fns library, which help parse and format dates.

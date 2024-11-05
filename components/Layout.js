@@ -1,9 +1,15 @@
 import Head from "next/head";
 import Header from "./Header";
+import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 import { SITE_NAME, SITE_DESCRIPTION } from "../config/config.js";
 
-export default function Layout({ children, pageTitle, description }) {
+export default function Layout({
+  children,
+  pageTitle,
+  description,
+  categories,
+}) {
   const defaultTitle = SITE_NAME;
   const defaultDescription = SITE_DESCRIPTION;
   return (
@@ -22,9 +28,12 @@ export default function Layout({ children, pageTitle, description }) {
 
       {/* Header */}
       <Header />
-
+      <div className="flex flex-grow">
+        <Sidebar categories={categories} />
+        <main className="flex-grow px-4 py-8">{children}</main>
+      </div>
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-8 flex-grow">{children}</main>
+      {/* <main className="container mx-auto px-4 py-8 flex-grow">{children}</main> */}
 
       {/* Footer */}
       <Footer />
